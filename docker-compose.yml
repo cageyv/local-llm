@@ -1,0 +1,32 @@
+services:
+  bedrock-proxy-api:
+    image: 366590864501.dkr.ecr.eu-central-1.amazonaws.com/bedrock-proxy-api-ecs:latest
+    ports:
+      - '8080:8080'
+    environment:
+      PORT: '8080'
+      DEFAULT_MODEL: 'anthropic.claude-3-5-sonnet-20240620-v1:0'
+      DEFAULT_EMBEDDING_MODEL: 'cohere.embed-multilingual-v3'
+      ENABLE_CROSS_REGION_INFERENCE: 'false'
+      DEBUG: 'false'
+      API_KEY: 'A6BA331C-48E3-471C-9FCC-69BE3B039F15'
+      AWS_REGION:
+      AWS_DEFAULT_REGION:
+      AWS_ACCESS_KEY_ID:
+      AWS_SECRET_ACCESS_KEY:
+      AWS_SESSION_TOKEN:
+      AWS_CREDENTIAL_EXPIRATION:
+    restart: always
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    ports:
+      - "3000:8080"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - open-webui:/app/backend/data
+    restart: always
+
+volumes:
+  open-webui:
