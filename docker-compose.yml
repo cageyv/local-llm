@@ -1,4 +1,17 @@
 services:
+  litellmt:
+    image: ghcr.io/berriai/litellm-non_root:main-v1.59.8
+    ports:
+      - '4000:4000'
+    environment:
+      OPENAI_API_KEY:
+      OLLAMA_API_BASE: http://host.docker.internal:11434
+      # LITELLM_MASTER_KEY: "sk-1234"
+      # LITELLM_SALT_KEY: "sk-1234"
+    volumes:
+      - ./litellm/config.yaml:/app/config.yaml 
+    restart: always
+    command: --config /app/config.yaml --detailed_debug
   bedrock-proxy-api:
     image: 366590864501.dkr.ecr.eu-central-1.amazonaws.com/bedrock-proxy-api-ecs:latest
     ports:
