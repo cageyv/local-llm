@@ -7,3 +7,7 @@ model_list:
     litellm_params:
       model: lm_studio/phi4-14b
       api_key: api-key
+  - model_name: lm_studio/deepseek-r1-14b
+    litellm_params:
+      model: lm_studio/deepseek-r1-14b
+      api_key: api-key

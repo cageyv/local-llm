@@ -4,7 +4,7 @@ services:
     ports:
       - '4000:4000'
     environment:
-      LM_STUDIO_API_BASE: http://host.docker.internal:1234
+      LM_STUDIO_API_BASE: http://host.docker.internal:1234/v1/
       LM_STUDIO_API_KEY: 'A6BA331C-48E3-471C-9FCC-69BE3B039F15'
       # LITELLM_MASTER_KEY:
       # LITELLM_SALT_KEY:
