@@ -1,8 +1,9 @@
 model_list:
-  - model_name: ollama/deepseek-r1:14b
+  - model_name: lm_studio/llama3.2-latest
     litellm_params:
-      model: ollama/deepseek-r1:14b
-  - model_name: gpt-4o-mini
+      model: lm_studio/llama3.2-latest
+      api_key: api-key
+  - model_name: lm_studio/phi4-14b
     litellm_params:
-      model: openai/gpt-4o-mini
-      api_key: os.environ/OPENAI_API_KEY
+      model: lm_studio/phi4-14b
+      api_key: api-key
