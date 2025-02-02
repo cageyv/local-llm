@@ -11,3 +11,7 @@ model_list:
     litellm_params:
       model: lm_studio/deepseek-r1-14b
       api_key: api-key
+  - model_name: lm_studio/deepseek-r1-32b
+    litellm_params:
+      model: lm_studio/deepseek-r1-32b
+      api_key: api-key
